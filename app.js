@@ -9,7 +9,8 @@ var __js = __src + '/js';
 var config = require( __config ),
 	express = require( 'express' ),
 	app = express(),
-	server = require( 'http' ).Server( app );
+	server = require( 'http' ).Server( app ),
+	database = require( __js + '/database' ).connect();
 
 console.log( "Starting..." );
 
