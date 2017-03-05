@@ -1,0 +1,9 @@
+extends ../../../src/views/base
+
+block prepend title
+	- heading = "Login"
+
+block content
+	a.btn.btn-primary( href="/login/facebook" )
+		span.glyphicon.glyphicon-user
+		|  Login with Facebook

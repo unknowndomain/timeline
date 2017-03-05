@@ -21,7 +21,10 @@ exports.connect = function() {
 // Events
 exports.events = {}
 exports.events.schema = mongoose.Schema( {
-	_id: ObjectId,
+	_id: {
+		type: ObjectId,
+		default: mongoose.Types.ObjectId()
+	},
 	title: {
 		type: String,
 		required: true
@@ -79,7 +82,10 @@ exports.events.model = mongoose.model( 'Events', exports.events.schema )
 // Series
 exports.series = {};
 exports.series.schema = mongoose.Schema( {
-	_id: ObjectId,
+	_id: {
+		type: ObjectId,
+		default: mongoose.Types.ObjectId()
+	},
 	title: {
 		type: String,
 		required: true
@@ -114,7 +120,10 @@ exports.series.model = mongoose.model( 'Series', exports.series.schema )
 // Entities
 exports.entities = {};
 exports.entities.schema = mongoose.Schema( {
-	_id: ObjectId,
+	_id: {
+		type: ObjectId,
+		default: mongoose.Types.ObjectId()
+	},
 	name: {
 		type: String,
 		required: true
@@ -142,10 +151,12 @@ exports.entities.model = mongoose.model( 'Entities', exports.entities.schema )
 // Individuals
 exports.individuals = {};
 exports.individuals.schema = mongoose.Schema( {
-	_id: ObjectId,
+	_id: {
+		type: ObjectId,
+		default: mongoose.Types.ObjectId()
+	},
 	slug: {
 		type: String,
-		required: true,
 		unique: true
 	},
 	firstname: String,
@@ -153,7 +164,7 @@ exports.individuals.schema = mongoose.Schema( {
 	email: String,
 	url: String,
 	twitter: String,
-	facebook: String,
+	facebook_id: String,
 	created: Date,
 	edited: Date
 } );

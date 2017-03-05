@@ -1,10 +1,14 @@
 var	express = require( 'express' ),
 	app = express();
 
-app.set( 'views', __dirname + '/views' );
+var passport = require( 'passport' );
 
 app.get( '/', function ( req, res ) {
-	res.render( 'index' );
+	if ( req.isAuthenticated() ) {
+		req.logout();
+	} else {
+	}
+	res.redirect( '/' );
 } );
 
 module.exports = function( config ) { return app; };
